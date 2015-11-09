@@ -1,20 +1,31 @@
 var SOUND_CLOUD_KEY =  '8c1e7cf87ec98696fc9fb75efa0c4ec6';
 
 SC.initialize({
-  client_id: 'YOUR_CLIENT_ID',
-  redirect_uri: 'http://example.com/callback'
+  client_id: 'YOUR_CLIENT_ID'
 });
 //Taken from https://developers.soundcloud.com/docs/api/sdks#javascript
 
-SC.connect().then(function(){
-  return SC.put('/me/followings/183');
-}).then(function(user){
-  alert('You are now following ' + user.username);
-}).catch(function(error){
-  alert('Error: ' + error.message);
-});
-
+// SC.connect().then(function(){
+//   return SC.put('/me/followings/183');
+// }).then(function(user){
+//   alert('You are now following ' + user.username);
+// }).catch(function(error){
+//   alert('Error: ' + error.message);
+// });
+// SC stream for music playing SC.stream(trackPath)
+// SC.resolve(url) JSon representation of resource
+//https://developers.soundcloud.com/docs/api/reference#tracks
+//Properties to use title, stream_url, artwork_url
 //Find music
+exports.search = function(searchTerm){
+  SC.get('/tracks', {
+  q: searchTerm, license: 'cc-by-sa'
+  }).then(function(tracks){
+  render(tracks);
+  })
+}
+
+
 
 //Add to their current playlist
 
