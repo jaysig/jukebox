@@ -17,8 +17,16 @@ module.exports = React.createClass({
       //if not typing
         //config.search on the value
         var value = this.state.value;
-        config.search(value);
-        return <input type="text" value={value} onChange={this.handleChange} />;
+        if(this.state.query === ''{
+          iconClasses += 'hidden';
+        })
+        return(
+          <div className ="form-group has-feedback">
+          <input type="text" value={value} className="form-control" onChange={this.handleChange} />
+          <span className="glyphicon form-control-feedback clickable"></span>
+          </div>
+        );
+
           // return React.DOM.div({},
         //     new React.DOM.p({}, 'Search box'),
         //     new React.DOM.input({})

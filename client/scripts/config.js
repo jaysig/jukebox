@@ -29,8 +29,6 @@ exports.search = function(searchTerm){
   })
 }
 
-
-
 //Add to their current playlist
 
 //Play user's playlist

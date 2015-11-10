@@ -12,7 +12,6 @@ var searchData = React.createElement(songList, searchResults);
 var searchBar = React.createElement(searchBar);
 React.render(
     searchBar,
-    document.getElementById('search'),
-    console.log(searchBar.value);
+    document.getElementById('search')
 );
 React.render(searchData, document.querySelector('.container'));
