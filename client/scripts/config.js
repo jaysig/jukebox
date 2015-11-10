@@ -1,7 +1,11 @@
-// var SOUND_CLOUD_KEY =  '8c1e7cf87ec98696fc9fb75efa0c4ec6';
+
+var React = require('react');
 var SC = require('soundcloud');
+
+
+
 SC.initialize({
-  client_id: '8c1e7cf87ec98696fc9fb75efa0c4ec6'
+  client_id: '4add433e01628e02ae078d67f56e86ba'
 });
 //Taken from https://developers.soundcloud.com/docs/api/sdks#javascript
 

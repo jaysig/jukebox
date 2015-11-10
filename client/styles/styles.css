@@ -1,3 +1,7 @@
 .container {
-  
+
+}
+.clickable {
+  cursor: pointer;
+  pointer-event: initial;
 }

@@ -1,12 +1,18 @@
 // Your ReactJS code here
-var React = require('react');
-var songList = require('songList.jsx');
-var config = require('config.js');
-var searchBar = require('searchBar.jsx');
+var React = require('React');
+var songList = require('./songlist.jsx');
+var config = require('./config.js');
+var searchBar = require('./searchbar.jsx');
 
 var searchResults = config.search();
 
 
-var element = react.createElement(songList, searchResults);
-
-react.render(element, document.querySelector(.container));
+var searchData = React.createElement(songList, searchResults);
+//Multiple React render functions?
+var searchBar = React.createElement(searchBar);
+React.render(
+    searchBar,
+    document.getElementById('search'),
+    console.log(searchBar.value);
+);
+React.render(searchData, document.querySelector('.container'));
