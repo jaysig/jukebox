@@ -1,7 +1,7 @@
-var SOUND_CLOUD_KEY =  '8c1e7cf87ec98696fc9fb75efa0c4ec6';
-
+// var SOUND_CLOUD_KEY =  '8c1e7cf87ec98696fc9fb75efa0c4ec6';
+var SC = require('soundcloud');
 SC.initialize({
-  client_id: 'YOUR_CLIENT_ID'
+  client_id: '8c1e7cf87ec98696fc9fb75efa0c4ec6'
 });
 //Taken from https://developers.soundcloud.com/docs/api/sdks#javascript
 
@@ -21,7 +21,7 @@ exports.search = function(searchTerm){
   SC.get('/tracks', {
   q: searchTerm, license: 'cc-by-sa'
   }).then(function(tracks){
-  render(tracks);
+    return tracks;
   })
 }
 

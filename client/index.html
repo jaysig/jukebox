@@ -21,13 +21,17 @@
     <div> Player </div>
     <div class = 'queue'>
     </div>
-    <div> Search </div>
+    <div> Search
+      <SearchBar onChange={(input, resolve) => {  }} />
+    <!-- // get suggestions based on `input`, then pass them to `resolve()`  -->
+
+     </div>
     <div class = 'songBox'>
     </div>
     <!-- your scripts -->
     <script type="text/javascript" src="scripts/config.js"></script>
-    <script type="text/jsx" src="scripts/app.js"></script>
     <script type="text/jsx" src="scripts/song.jsx"></script>
     <script type="text/jsx" src="scripts/songList.jsx"></script>
+    <script type="text/jsx" src="scripts/app.js"></script>
   </body>
 </html>
