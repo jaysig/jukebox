@@ -49,8 +49,6 @@ exports.search = function(searchTerm){
   })
 }
 
-
-
 //Add to their current playlist
 
 //Play user's playlist
@@ -66,18 +64,41 @@ var config = require('./config.js');
 //config has the config.search function
 module.exports = React.createClass({displayName: "exports",
     getInitialState: function() {
-      return {value: ''};
+      return {query: ''};
+      // return {value: ''};
     },
-    handleChange: function(event) {
-      this.setState({value: event.target.value});
+    updateQuery: function(event){
+      this.setState({
+        query: event.target.value
+      });
     },
+    clearSearch: function(){
+      this.setState({
+        query:''
+      })
+    },
+    // handleChange: function(event) {
+    //   this.setState({value: event.target.value});
+    // },
     render: function(){
       //if not typing
         //config.search on the value
-        return React.DOM.div({},
-            new React.DOM.p({}, 'Search box'),
-            new React.DOM.input({})
+        // var value = this.state.value;
+        var iconClasses = 'glyphicon glyphicon-remove form-control-feedback clickable';
+        if(this.state.query === ''){
+          iconClasses += 'hidden';
+        }
+        return(
+          React.createElement("div", {className: "form-group has-feedback"}, 
+          React.createElement("input", {type: "text", value: this.state.query, className: "form-control", onChange: this.updateQuery}), 
+          React.createElement("span", {onClick: this.clearSearch, className:  iconClasses })
+          )
         );
+
+          // return React.DOM.div({},
+        //     new React.DOM.p({}, 'Search box'),
+        //     new React.DOM.input({})
+        // );
     }
 });
 
@@ -19040,7 +19061,7 @@ module.exports = performanceNow;
  *
  * @providesModule shallowEqual
  * @typechecks
- *
+ * 
  */
 
 'use strict';
@@ -38112,7 +38133,7 @@ module.exports = performanceNow;
  *
  * @providesModule shallowEqual
  * @typechecks
- *
+ * 
  */
 
 'use strict';

@@ -3,5 +3,19 @@
 }
 .clickable {
   cursor: pointer;
-  pointer-event: initial;
+  pointer-events: initial;
+}
+
+.track{
+  padding:14px;
+}
+
+.track .artwork{
+  height: 100px;
+  width: 100px;
+}
+.track .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

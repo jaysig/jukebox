@@ -8,22 +8,34 @@ var config = require('./config.js');
 //config has the config.search function
 module.exports = React.createClass({
     getInitialState: function() {
-      return {value: ''};
+      return {query: ''};
+      // return {value: ''};
     },
-    handleChange: function(event) {
-      this.setState({value: event.target.value});
+    updateQuery: function(event){
+      this.setState({
+        query: event.target.value
+      });
     },
+    clearSearch: function(){
+      this.setState({
+        query:''
+      })
+    },
+    // handleChange: function(event) {
+    //   this.setState({value: event.target.value});
+    // },
     render: function(){
       //if not typing
         //config.search on the value
-        var value = this.state.value;
-        if(this.state.query === ''{
+        // var value = this.state.value;
+        var iconClasses = 'glyphicon glyphicon-remove form-control-feedback clickable';
+        if(this.state.query === ''){
           iconClasses += 'hidden';
-        })
+        }
         return(
           <div className ="form-group has-feedback">
-          <input type="text" value={value} className="form-control" onChange={this.handleChange} />
-          <span className="glyphicon form-control-feedback clickable"></span>
+          <input type="text" value={this.state.query} className="form-control" onChange={this.updateQuery} />
+          <span onClick={this.clearSearch} className={ iconClasses }></span>
           </div>
         );
 
